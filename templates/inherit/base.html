@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+
+{% include 'inherit/head.html' %}
+{% block title %}{{ section.title }}{% endblock %}
+
+
+<body class="is-preload">
+    {% include 'inherit/whatsapp.html'%}
+    {% include 'inherit/header.html'%}
+    {% block content %}
+
+
+    {% endblock %}
+    {% include 'inherit/footer.html'%}
+
+</body>
+
+</html>

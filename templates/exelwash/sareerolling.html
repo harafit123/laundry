@@ -1,0 +1,40 @@
+{% extends "inherit/base.html"%}
+
+{% block content %}
+{% load static %}
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Shoe laundry heading-->
+    <h2 style="text-align: center;">Saree Rolling Service</h2>
+    <!-- Main -->
+    <div class="container">
+        <div class="row">
+            {% include "inherit/same_data.html"%}
+            <div class="col-sm-12 col-md-6">
+                <img src="{% static 'images/saree.jpeg' %}" style="height: 370px; width: 370px;">
+            </div>
+            <div class="">
+                <h4>Saree Rolling</h4>
+                <p>Your sarees need an exquisite cleaning service to protect and safeguard for long term use. You
+                    definitely would not like to wear a stain-driven or a wrinkled saree to your office or to a
+                    party with your friends. Wearing a beautiful and neatly done saree elevates your glamorous looks
+                    and you would enjoy all of your day as your friends and family appreciate you for your dressing
+                    style. When you wash your sarees at home, you run the risk of discoloring, wrinkles, and
+                    sometimes losing the good looks of your saree. Exel wash comes in exactly here to take great
+                    care of your saree with saree rolling service available at an affordable cost.</p>
+                <h5>We specialize in:</h5>
+                <p>Exel wash uses advanced methodologies to clean up your fabric using most safe and quality
+                    standards to bring you crisp, fresh and clean clothing.</p>
+                <h6>Services we offer are:</h6>
+                <ul>
+                    <li>Saree polishing to preserve the shine of the garment</li>
+                    <li>Take care of the natural beauty of your saree</li>
+                    <li>Secure the type of fabric - cotton, pure silk, georgette, chiffon, embroidered and other
+                    </li>
+                    <li>Saree rolling</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,161 @@
+{% load static %}
+<!-- Footer -->
+<div id="wrapper">
+    <!-- process images -->
+    <div>
+        <div class="row" style="width: 100%;">
+            <div class="col-2">
+                <img src="{% static 'images/one.gif'%}" style="width: 100%;">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'images/two.gif'%}" style="width: 100%;">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'images/three.gif'%}" style="width: 100%;">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'images/four.gif'%}" style="width: 100%;">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'images/five.gif'%}" style="width: 100%;">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'images/six.gif'%}" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="one col-md-4 col-sm-4" style="margin-left: 4px;">pickup -----------</h3>
+            <h3 class="three col-md-4 col-sm-4">---------Process----------------</h3>
+            <h3 class="five col-md-4 col-sm-4">----Delivery</h3>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12">
+        <footer id="footer">
+            <div class="inner">
+                <section>
+                    <h2>Get in touch</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="fields">
+                            <div class="field half">
+                                <input type="text" name="name" id="name" placeholder="Name" />
+                            </div>
+                            <div class="field half">
+                                <input type="email" name="email" id="email" placeholder="Email" />
+                            </div>
+                            <div class="field">
+                                <textarea name="message" id="message" placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li>
+                                <input type="submit" name="enquiry_form" value="Send" class="primary" />
+                            </li>
+                        </ul>
+                    </form>
+                </section>
+                <section>
+                    <h2>Follow</h2>
+                    <ul class="icons">
+                        <li>
+                            <a href="#" class="icon brands style2 fa-facebook-f">
+                                <span class="label">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="icon brands style2 fa-instagram">
+                                <span class="label">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="icon solid style2 fa-phone">
+                                <span class="label">Phone</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="icon solid style2 fa-envelope">
+                                <span class="label">Email</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<!-- Footer section -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <h2>About ExelWash</h2>
+            <p>Our mission is to ensure that everybody is hygienic by wearing clean clothes which in turn makes their
+                surroundings clean and green.</p>
+            <p>+91 0000000000</p>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <h2>SERVICES</h2>
+            <ul class="links c-black">
+                <a href="{% url 'washing' %}" style="color:black;">Washing</a>
+                <br>
+                <a href="{% url 'wash_fold' %}" style="color:black;">Wash & Fold</a>
+                <br>
+                <a href="{% url 'dry_cleaning' %}" style="color:black;">Dry Cleaning</a>
+                <br>
+                <a href="{% url 'shoe_laundry' %}" style="color:black;">Shoe Laundry</a>
+                <br>
+                <a href="{% url 'saree_rooling' %}" style="color:black;">Saree Rolling</a>
+                <br>
+                <a href="{% url 'strain_removal' %}" style="color:black;">Stain Removal</a>
+                <br>
+                <a href="{% url 'steam_ironing' %}" style="color:black;">Steam Ironing</a>
+                <br>
+                <a href="{% url 'carpet' %}" style="color:black;">Carpet & Curtain Cleaning</a>
+                <br>
+                <a href="{% url 'toys_cleaning' %}" style="color:black;">Soft Toys Cleaning</a>
+            </ul>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <h2>Our Outlets</h2>
+            <p>Madhapur</p>
+            <p>Durgam Cheruvu</p>
+            <p>Hightech City</p>
+            <p>Ameerpet</p>
+            <p>SR Nagar</p>
+            <p></p>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <div class="links">
+                <h2>Links</h2>
+                <a href="{% url 'index' %}" style="color:black;">Home</a>
+                <br>
+                <a href="" style="color: black;">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer navbar -->
+<div style="width:100%;">
+    <nav class="navbar navbar-light bg-primary">
+        <span class="navbar-text">
+            <p style="color: white; font-weight: bold; margin-left:70px;" class="one">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-c-circle" viewBox="0 0 16 16">
+                    <path
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z" />
+                </svg> exel wash all rights reserved
+            </p>
+            <p class="two" style="color:white; font-weight:bold; margin-left: 150px;">Powered By Haraf</p>
+        </span>
+    </nav>
+</div>
+
+
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+<script src="{% static 'assets/js/browser.min.js'%}"></script>
+<script src="{% static 'assets/js/breakpoints.min.js'%}"></script>
+<script src="{% static 'assets/js/util.js'%}"></script>
+<script src="{% static 'assets/js/main.js'%}"></script>

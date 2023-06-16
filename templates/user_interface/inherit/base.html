@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+
+{% include 'user_interface/inherit/head.html' %}
+{% block title %}{{ section.title }}{% endblock %}
+
+
+<body style="background-color: #9ec2e6;">
+    {% include 'user_interface/inherit/header.html'%}
+    {% block content %}
+
+
+    {% endblock %}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+        // Filter shop/vendor cards based on selected options
+
+
+
+
+        function filterVendors() {
+            var searchInput = document.getElementById('searchInput').value.toLowerCase();
+            var serviceFilter = document.getElementById('serviceFilter').value;
+            var locationFilter = document.getElementById('locationFilter').value;
+
+            var vendorList = document.getElementById('vendorList');
+
+
+
+
+            var vendors = vendorList.getElementsByClassName('col-md-3');
+
+            for (var i = 0; i < vendors.length; i++) {
+                var vendor = vendors[i];
+                var vendorName = vendor.querySelector('.card-title').innerText.toLowerCase();
+                var services = vendor.querySelector('.card-text:nth-child(2)').innerText.toLowerCase();
+                var location = vendor.querySelector('.card-text:nth-child(3)').innerText.toLowerCase();
+
+
+
+
+
+                if (
+                    vendorName.indexOf(searchInput) > -1 &&
+
+                    (serviceFilter === '' || services.indexOf(serviceFilter.toLowerCase()) > -1) &&
+                    (locationFilter === '' || location.indexOf(locationFilter.toLowerCase()) > -1)
+                ) {
+                    vendor.style.display = 'block';
+                } else {
+                    vendor.style.display = 'none';
+                }
+            }
+        }
+
+        // Attach event listeners to filtering options
+        document.getElementById('searchInput').addEventListener('input', filterVendors);
+
+        document.getElementById('serviceFilter').addEventListener('change', filterVendors);
+
+        document.getElementById('locationFilter').addEventListener('change', filterVendors);
+    </script>
+</body>
+
+</html>

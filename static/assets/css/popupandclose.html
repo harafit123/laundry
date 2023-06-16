@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form Popup</title>
+	<style type="text/css">
+		.popup {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			display: none;
+		}
+		.popup-content {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: transparent;
+			padding: 20px;
+			border: 1px solid #ccc;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		}
+		.popup-close {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body style="background-color: yellow;">
+
+   <h1>ferfrr</h1>
+   <h2>ddfrwfwrfwe</h2>
+
+
+
+	<div class="popup" id="popup">
+		<div class="popup-content">
+			<span class="popup-close" onclick="closePopup()">&times;</span>
+			<form>
+			
+			<h1>eeze Wash</h1>
+			<label></label>  
+            
+
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+		setTimeout(showPopup, 5000);
+		function showPopup() {
+			var popup = document.getElementById("popup");
+			popup.style.display = "block";
+		}
+		function closePopup() {
+			var popup = document.getElementById("popup");
+			popup.style.display = "none";
+		}
+	</script>
+</body>
+</html>

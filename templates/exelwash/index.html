@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+
+<html>
+
+{% include "inherit/head.html"%}
+<div class="popup" id="popup">
+    <div class="popup-content" style="border-radius: 22px; background:solid;">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="container">
+                <h1>Login</h1>
+                <form id="loginForm" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" name="login_form" value="Submit Form 1">Login</button>
+                    </div>
+
+
+                </form>
+                <p id="result"></p>
+                <span class="psw">
+                    <a href="#">Forgot password?</a>
+                </span>
+            </div>
+
+
+
+            <li>
+                <a class="two" href="{% url 'signup' %}">Create An account</a>
+            </li>
+        </form>
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    setTimeout(showPopup, 5000);
+
+    function showPopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "block";
+    }
+
+    function closePopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "none";
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get input values
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Validate input
+        if (username === "admin" && password === "password") {
+            document.getElementById("result").innerHTML = "Login successful!";
+            document.getElementById("result").style.color = "green";
+            // Perform additional actions or redirect to another page
+        } else {
+            document.getElementById("result").innerHTML = "Invalid username or password.";
+            document.getElementById("result").style.color = "red";
+        }
+    });
+
+</script>
+
+<body class="is-preload">
+
+
+
+
+    {% include 'inherit/whatsapp.html'%}
+    <!-- login popup -->
+    <!-- Wrapper -->
+    {% load static%}
+    {% include 'inherit/header.html'%}
+
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <header>
+                    <h1>Quality Work at Perfect Time. <br> Right Choice for Your Clothes. <br>
+                    </h1>
+                    <br>
+                    <p>Laundry Sometimes Feels Like a Huge Task, Particularly To Wash a Big Loads Of Clothes
+                        Continuously. <br> You Say, If Only Some One Does It For Me Perfectly Just Like I Do.....
+                    </p>
+                    <!--our services -->
+                    <h1>OUR SERVICES</h1>
+                </header>
+                {% include 'inherit/titles.html'%}
+            </div>
+        </div>
+
+    </div>
+    {% include "inherit/footer.html"%}
+</body>
+
+</html>

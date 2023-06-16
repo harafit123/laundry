@@ -1,0 +1,43 @@
+{% extends "inherit/base.html"%}
+
+{% block content %}
+{% load static %}
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Shoe laundry heading-->
+    <h2 style="text-align: center;">Wash & Fold Service</h2>
+    <!-- Main -->
+    <div class="container">
+        <div class="row">
+            {% include "inherit/same_data.html"%}
+            <div class="col-sm-12 col-md-6">
+                <img src="{% static 'images/washandfold.jpeg' %}" style="height: 400px; width: 360px;">
+            </div>
+            <div class="">
+                <h4>Wash & Fold</h4>
+                <p>Exel wash brings you top quality wash and fold services Hyderabad. Your favorite clothing gets
+                    the best care and soft handling while we undertake laundry services. Not only do you save time,
+                    costs of electricity and other hiring services, but you receive the best time of delivery much
+                    in advance, but the fragrance-fresh clothes make you happy and smile as you arrange your freshly
+                    done clothes in your wardrobe. At times, loads of long hour clothing make you tired and it
+                    appears as a never ending chore, especially washing curtains, mattress clothing, comforters and
+                    other bed linen. Wash & fold services are the best in Hyderabad that you are able to receive
+                    clean and refreshing laundromat services. Hiring us brings you finest laundry services as you
+                    take care of yourself to wear neatly washed clothes everyday.</p>
+                <h5>Process of Wash & Fold</h5>
+                <p>Offering as a basic need of housekeeping services, your clothes are washed in our washing
+                    machines and dried delicately. <br> After ensuring that clothes are absolutely clean and dry,
+                    they are folded and delivered to you safely and in an absolutely comfortable manner. <br> Just
+                    in a day or two, you are able to receive wash & fold services. </p>
+                <h6>Benifits of Wash & Fold</h6>
+                <ul>
+                    <li>Ensure high quality hygiene in using clean systems at washing store</li>
+                    <li>Maintain proper and frequent sanitization standards</li>
+                    <li>Access most affordable and cost-saving laundry service</li>
+                    <li>Pick up and home drop facility</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'ui/add_to_cart/addtocart.css' %}">
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <p class="logo"><img src="{% static 'ui/add_to_cart/image/useribrand.jpeg' %}"
+                style="width:210px; padding-top: 10px; border-radius: 10px;">
+        </p>
+        <div class="cart"><i class="fa-solid fa-cart-shopping"></i>
+            <p id="count">0</p>
+        </div>
+    </div>
+    <div class="container">
+        <div id="root"></div>
+        <div class="sidebar">
+            <div class="head">
+                <p>My Cart</p>
+            </div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">Rs 0.00</h2>
+            </div>
+            <button type="button" class="btn btn-primary">Order</button>
+        </div>
+    </div>
+
+    <script>
+
+        const product = [
+            {
+                id: 0,
+                image: "{%static 'ui/add_to_cart/image/shirt.jpg' %}",
+                title: 'Shirt',
+                price: 80,
+            },
+            {
+                id: 1,
+                image: "{% static 'ui/add_to_cart/image/kurta.jpg' %}",
+                title: 'Kurta',
+                price: 60,
+            },
+            {
+                id: 2,
+                image: "{% static 'ui/add_to_cart/image/saree.jpg' %}",
+                title: 'Saree Normal',
+                price: 150,
+            },
+            {
+                id: 3,
+                image: "{% static 'ui/add_to_cart/image/saree.jpg' %}",
+                title: 'Saree goldzari',
+                price: 300,
+            },
+            {
+                id: 4,
+                image: "{% static 'ui/add_to_cart/image/Tshirt.jpg' %}",
+                title: 'Tshirt',
+                price: 100,
+            },
+            {
+                id: 5,
+                image: "{% static 'ui/add_to_cart/image/jeans.jpg' %}",
+                title: 'Jeans',
+                price: 100,
+            },
+            {
+                id: 6,
+                image: "{% static 'ui/add_to_cart/image/short.jpg' %}",
+                title: 'Short',
+                price: 80,
+            },
+            {
+                id: 7,
+                image: "{% static 'ui/add_to_cart/image/shirt.jpg' %}",
+                title: 'Shirt Designer',
+                price: 100,
+            }
+
+        ];
+        const categories = [...new Set(product.map((item) => item))];
+        let i = 0;
+
+        document.getElementById('root').innerHTML = categories
+            .map((item) => {
+                var { image, title, price } = item;
+                const priceInINR = price * 1; // Assuming 1 USD = 74.5 INR
+                return (
+                    `<div class='box'>
+        <div class='img-box'>
+          <img class='images' src=${image}></img>
+        </div>
+        <div class='bottom'>
+          <p>${title}</p>
+          <h2>Rs ${priceInINR}.00</h2>` +
+                    `<button onclick='addtocart(${i++})'>Add to cart</button>` +
+                    `</div>
+      </div>`
+                );
+            })
+            .join('');
+
+        var cart = [];
+
+        function addtocart(a) {
+            cart.push({ ...categories[a] });
+            displaycart();
+        }
+
+        function delElement(a) {
+            cart.splice(a, 1);
+            displaycart();
+        }
+
+        function displaycart() {
+            let j = 0,
+                total = 0;
+            document.getElementById('count').innerHTML = cart.length;
+            if (cart.length == 0) {
+                document.getElementById('cartItem').innerHTML = 'Your cart is empty';
+                document.getElementById('total').innerHTML = 'Rs ' + 0 + '.00';
+            } else {
+                document.getElementById('cartItem').innerHTML = cart
+                    .map((items) => {
+                        var { image, title, price } = items;
+                        const priceInINR = price * 1;
+                        total = total + priceInINR;
+                        document.getElementById('total').innerHTML = 'Rs ' + total + '.00';
+                        return (
+                            `<div class='cart-item'>
+          <div class='row-img'>
+            <img class='rowimg' src=${image}>
+          </div>
+          <p style='font-size:12px;'>${title}</p>
+          <h2 style='font-size: 15px;'>Rs ${priceInINR}.00</h2>` +
+                            `<i class='fa-solid fa-trash' onclick='delElement(${j++})'></i></div>`
+                        );
+                    })
+                    .join('');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

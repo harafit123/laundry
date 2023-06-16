@@ -1,0 +1,39 @@
+{% extends "inherit/base.html"%}
+
+{% block content %}
+{% load static %} <!-- Wrapper -->
+<div id="wrapper">
+    <!-- Shoe laundry heading-->
+    <h2 style="text-align: center;">Dry Cleaning Service</h2>
+    <!-- Main -->
+    <div class="container">
+        <div class="row">
+            {% include "inherit/same_data.html"%}
+            <div class="col-sm-12 col-md-6">
+                <img src="{% static 'images/drycleaning.jpeg' %}" style="height: 360px; width: 360px;">
+            </div>
+            <div class="">
+                <h4>Dry Cleaning</h4>
+                <p>Gone were the days when dry cleaning was limited for only a few people due to its high costs. Now
+                    Exel Wash brings you some of the best and finest dry cleaning systems that you can access
+                    easily. There are also opinions that dry cleaning takes away the glossy and shiny look of your
+                    fabric. But that is just a myth and it is not true. Exel wash uses only delicate cleaning
+                    systems to retain and preserve the freshness and charm of the fabric while merely washing your
+                    dresses for cleaning purposes.</p>
+                <h5>The process of Dry Cleaning</h5>
+                <p>Dry cleaning is a top quality laundry service and quite different from the regular wet or
+                    laundromat service. Exel Wash cleans your fabrics without using water in dry cleaning service.
+                    There is only light and delicate use of chemical solvents dissolved in other substances.</p>
+                <h6>Benifits of Dry Cleaning</h6>
+                <ul>
+                    <li>Removes stains, soils and any other substances from fabrics</li>
+                    <li>Takes away grease and oil marks</li>
+                    <li>Natural fibres like silk and wool are completely clean and receive a beautiful look</li>
+                    <li>Does not lose color</li>
+                    <li>Preserves the fresh and new look</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

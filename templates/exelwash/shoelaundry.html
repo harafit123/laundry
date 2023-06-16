@@ -1,0 +1,35 @@
+{% extends "inherit/base.html"%}
+
+{% block content %}
+{% load static %}
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Shoe laundry heading-->
+    <h2 style="text-align: center;">Shoe Laundry Service</h2>
+    <!-- Main -->
+    <div class="container">
+        <div class="row">
+            {% include "inherit/same_data.html"%}
+            <div class="col-sm-12 col-md-6">
+                <img src="{% static 'images/shoelaundry.jpeg' %}" style="height: 370px; width: 370px;">
+            </div>
+            <div class="">
+                <h4>Shoe Laundry</h4>
+                <p>Everyday shoes are a must-wear to your office or outgoing visits. Having one or more pairs of
+                    shoes need just not the polishing, cleaning, and regular maintenance, but is in need of much
+                    more than that.
+                <h5>Fresh & Clean</h5>
+                <p>Exel wash uses advanced methodologies to clean up your fabric using most safe and quality
+                    standards to bring you crisp, fresh and clean clothing.</p>
+                <h6>Services we offer are:</h6>
+                <ul>
+                    <li>Wash and clean</li>
+                    <li>Dry</li>
+                    <li>Neatly fold</li>
+                    <li>Deliver to your home</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

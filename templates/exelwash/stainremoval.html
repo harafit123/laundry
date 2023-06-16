@@ -1,0 +1,48 @@
+{% extends "inherit/base.html"%}
+
+{% block content %}
+{% load static %}
+<div id="wrapper">
+
+    <!-- Shoe laundry heading-->
+    <h2 style="text-align: center;">Stain Removal Service</h2>
+    <!-- Main -->
+    <div class="container">
+        <div class="row">
+            {% include "inherit/same_data.html"%}
+            <div class="col-sm-12 col-md-6">
+                <img src="{% static 'images/stain.jpeg' %}" style="height: 390px; width: 360px;">
+            </div>
+            <div class="">
+                <h4>Stain Removal</h4>
+                <p>Wearing good clothes is not a problem, the actual problem is when they require cleaning,
+                    especially if they get stained. There are so many stains that we can incur on our clothes while
+                    working. For e.g., food stains, grease, oil, lipstick, perspiration, etc. Dealing with different
+                    stains require different kinds of cleaning agent and processes. Stains look bad and when they
+                    become a part of our highly expensive or special saree or suit, we get really sad and worried.
+                    <br>
+                    <br> Many a times, you may not know how to get rid of these stains and preserve your clothes.
+                    Worry No More. We are here to help you with your suit or saree stain removal. PKC laundries is a
+                    growing laundry services in Hyderabad with a good no of stores, expert staffs and 24*7 customer
+                    support. We not only understand your requirement by identifying the stain type but also ensures
+                    that the stain is properly removed without harming your clothes. <br>
+                    <br> Our online booking process is very simple. Book your stain removal services by choosing the
+                    desired pick-up and delivery date and time and our executive will be there at your place right
+                    on time. We excel in providing timely as well quality delivery, resulting in trusted customer
+                    base and best of stain removal service provider in Hyderabad.
+                </p>
+                <h5>Fresh & Clean</h5>
+                <p>Exel wash uses advanced methodologies to clean up your fabric using most safe and quality
+                    standards to bring you crisp, fresh and clean clothing.</p>
+                <h6>Services we offer are:</h6>
+                <ul>
+                    <li>Wash and clean</li>
+                    <li>Dry</li>
+                    <li>Neatly fold</li>
+                    <li>Deliver to your home</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

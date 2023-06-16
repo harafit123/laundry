@@ -1,0 +1,41 @@
+{% extends "inherit/base.html"%}
+
+{% block content %}
+{% load static %}
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Shoe laundry heading-->
+    <h2 style="text-align: center;">Steam Ironing Service</h2>
+    <!-- Main -->
+    <div class="container">
+        <div class="row">
+            {% include "inherit/same_data.html"%}
+            <div class="col-sm-12 col-md-6">
+                <img src="{% static 'images/ironing.jpeg' %}" style="height: 400px; width: 400px;">
+            </div>
+            <div class="">
+                <h4>Steam Ironing</h4>
+                <p>Teaming is an effective way to get wrinkles out of almost any fabric—it requires less space to
+                    use a steamer (especially if you use a handheld steamer), and it takes less time and effort than
+                    ironing does. Plus, there are plenty of other benefits—even health related! —to steaming that
+                    you can't get from using an iron.</p>
+                <p>The rise of nuclear families with more emphasis on career has led to the decreasing interest of
+                    people in daily household chores. While a best ironed or crisp shirt or dress is important,
+                    performing the same duty at home is really difficult and time-taking. Clothes not only requires
+                    proper laundry but proper ironing as well as a wrinkled shirt or dress makes you look clumsy and
+                    unprofessional.</p>
+                <h5>Fresh & Clean</h5>
+                <p>Exel wash uses advanced methodologies to clean up your fabric using most safe and quality
+                    standards to bring you crisp, fresh and clean clothing.</p>
+                <h6>Services we offer are:</h6>
+                <ul>
+                    <li>Wash and clean</li>
+                    <li>Dry</li>
+                    <li>Neatly fold</li>
+                    <li>Deliver to your home</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

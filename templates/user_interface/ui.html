@@ -1,0 +1,605 @@
+{% extends "user_interface/inherit/base.html"%}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+  <h1 style="padding-top: 20px; font-family: sans-serif; text-align: center; padding-bottom: 20px;">Find your Vendor /
+    Shop</h1>
+
+  <!-- Filtering options -->
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <input type="text" class="form-control" id="searchInput" placeholder="Search by Shop Name">
+    </div>
+    <div class="col-md-4">
+      <select class="form-control" id="serviceFilter">
+        <option value="">All Services</option>
+        <option value="Washing">Washing</option>
+        <option value="Dry Cleaning">Wash&fold</option>
+        <option value="Wash & Fold">Wash&Fold</option>
+        <option value="Shoe Laundry">Steam ironing</option>
+        <option value="Shoe Laundry"> Stain removal</option>
+        <option value="Shoe Laundry">Shoe laundry
+        </option>
+        <option value="Shoe Laundry">Saree rolling</option>
+        <option value="Shoe Laundry">Dry cleaning</option>
+        <option value="Shoe Laundry">Carpet washing</option>
+        <!-- Add more service options as needed -->
+      </select>
+    </div>
+    <div class="col-md-4">
+      <select class="form-control" id="locationFilter">
+        <option value="">All Locations</option>
+        <option value="KPHB">KPHB</option>
+        <option value="Madhapur">Madhapur</option>
+        <option value="Hightechcity">Hightechcity</option>
+        <option value="Ameerpet">Ameerpet</option>
+        <option value="Uppal">Uppal</option>
+        <option value="Boduppal">Boduppal</option>
+        <option value="Mettuguda">Mettuguda</option>
+        <option value="Shameerpet">Shameerpet</option>
+        <option value="Begumpet">Begumpet</option>
+        <option value="SR nagar">SR nagar</option>
+
+
+        <!-- Add more location options as needed -->
+      </select>
+    </div>
+  </div>
+
+  <div class="row" id="vendorList">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+
+
+          <h5 class="card-title">Henry's World</h5>
+          <p class="card-text">Services: Washing, Dry Cleaning</p>
+          <p class="card-text" style="font-weight: bold;">Location: KPHB</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+    <!-- Add more shop/vendor cards here -->
+
+    <!-- Example for Shop 2 -->
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+
+          <h5 class="card-title">Nazma wash</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Madhapur</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card" style="box-shadow">
+        <div class="card-body">
+
+          <h5 class="card-title">Sajid safe</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold ; ">Location: Hightechcity</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Sarath Soap</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Ameerpet</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Rao Rin</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Uppal</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Niha Bucket</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Boduppal</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">check out</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Anil Apsara</h5>
+          <p class="card-text">Services: saree rolling</p>
+          <p class="card-text" style="font-weight: bold;">Location: Mettuguda</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Kranthi laundry</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Shameerpet</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">check out</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Bhanu brush</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Begumpet</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Shekar shop</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: SR nagar</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Malla cloth care</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Boduppal</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Shaik Wash</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Ameerpet</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">BGT</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: KPHB</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Vinayaka Laundry</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Dhilshuknagar</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Sri Ram </h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Uppal</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">HTSR</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Begumpet</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">heck out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">LKJ</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: SR nagar</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Ghfd</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: KPHB</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">ASDF</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Madhapur</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">CVB</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: KPHB</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">KHG</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Uppal</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">HJK</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Boduppal</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">DSP</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Begumpet</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">ASD</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Uppal</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">UYH</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Mettuguda</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">FGH</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: KPHB</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Bnm</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Uppal</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-3" style="padding-top: 8px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Abc</h5>
+          <p class="card-text">Services: Wash & Fold, Shoe Laundry</p>
+          <p class="card-text" style="font-weight: bold;">Location: Ameerpet</p>
+          <div class="rating">
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2605;</span>
+            <span>&#x2606;</span>
+          </div>
+          <a href="{% url 'user_cart' %}" class="btn btn-primary">Check out</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Repeat the above card structure for more shops/vendors -->
+
+  </div>
+</div>
+
+{% endblock %}

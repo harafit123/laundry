@@ -1,0 +1,27 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);">
+    <a class="navbar-brand" href="#"><img src="{% static 'ui/assets/useribrand.jpeg' %}" alt="Logo" height="90px"
+            style="border-radius: 20px;"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img src="{% static 'ui/assets/userlogo.png' %}" alt="Profile Image" class="rounded-circle"
+                        height="30">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'index' %}">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

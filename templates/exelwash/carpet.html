@@ -1,0 +1,50 @@
+{% extends "inherit/base.html"%}
+
+{% block content %}
+{% load static %}
+<div id="wrapper">
+    <!-- Shoe laundry heading-->
+    <h2 style="text-align: center;">Carpet & Curtains Cleaning</h2>
+    <!-- Main -->
+    <div class="container">
+        <div class="row">
+            {% include "inherit/same_data.html"%}
+            <div class="col-sm-12 col-md-6">
+                <img src="{% static 'images/carpet.jpeg' %}" style="height: 360px; width: 360px;">
+            </div>
+            <div class="">
+                <h4>Curtains & Carpet Cleaning</h4>
+                <p>You would definitely agree that curtain cleaning makes you tired and it is such a laborious task
+                    at home. Not only washing and cleaning, but you need to add extra substances to bring that
+                    smoothness and crisp texture and on the top of all, you definitely have to hire a pressman to
+                    get your curtain pressed. Now with the available Exel wash carpet and curtain cleaning service,
+                    you can get your curtains absolutely cleaned. The big, long, huge and heavy weight cotton or
+                    silk fabric of curtains now receive the best washing and cleaning at Exel wash. The dry cleaning
+                    service for curtains is absolutely essential as it brings not only proper hygiene, but also that
+                    investment of yours on curtains is secured with extended life and look given to the curtains.
+                    Make it free from dust and odor and give a new look of crisp and papery-texture to your curtains
+                    with Exel wash that is branded for cleanest and fastest dry-cleaned curtains.</p>
+                <h5>Fresh & Clean</h5>
+                <p>Exel wash uses advanced methodologies to clean up your fabric using most safe and quality
+                    standards to bring you crisp, fresh and clean clothing.</p>
+                <h6>Services we offer are:</h6>
+                <ul>
+                    <li>Wash and clean</li>
+                    <li>Dry</li>
+                    <li>Neatly fold</li>
+                    <li>Deliver to your home</li>
+                </ul>
+                <h5>Carpet cleaning service</h5>
+                <p>Especially our carpet cleaning service at your home we do it professionally and thoroughly clean
+                    in a limited time to your complete satisfaction. Thin, thick, light weight or heavy weight,
+                    every type and model of carpet requires regular cleaning, especially if you have young children
+                    and seniors at home. If you have pets at home, you need a clean carpet as most carpet catches
+                    fur and hair of your pet. Giving a thorough cleaning to your carpet becomes most necessary and
+                    this is part of hygiene at your home. Exel wash maintains a professional team of carpet cleaning
+                    experts who visit your home at an appointed time and vacuum, wash and dry your carpet absolutely
+                    clean and neat.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

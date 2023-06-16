@@ -1,0 +1,47 @@
+{% load static %}
+
+<div id="wrapper">
+
+    <div class="col-sm-12" style="width: 80%;">
+        <a href="{% url 'index' %}" class="logo one">
+            <span class="symbol">
+                <img src="{% static 'images/logo.jpeg'%} " alt="" style="height:120px; width:300px;" />
+            </span>
+            <span class="title"></span>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            </a>
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <nav id="menu" style="background-color:blue;">
+        <h2>Menu</h2>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'services' %}">Services</a>
+            </li>
+            <li>
+                <a class="two" href="{% url 'signup' %}">Sign Up</a>
+            </li>
+            <li>
+                <a href="{% url 'log_in' %}">Login</a>
+            </li>
+        </ul>
+    </nav>
+</div>

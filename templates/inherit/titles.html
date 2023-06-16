@@ -1,0 +1,102 @@
+{% load static%}
+<section class="tiles">
+    <article class="style1">
+        <span class="image">
+            <img src="{% static 'images/washing.jpg'%}" alt="" />
+        </span>
+        <a href="{% url 'washing' %}">
+            <h2>WASHING</h2>
+            <div class="content">
+                <p>From party wear to casual wear.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style2">
+        <span class="image">
+            <img src="{% static 'images/washandfold.jpeg'%}" alt="" />
+        </span>
+        <a href="{% url 'wash_fold' %}">
+            <h2>WASH & FOLD</h2>
+            <div class=" content">
+                <p>Offering as a basic need of housekeeping services.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style3">
+        <span class="image">
+            <img src="{% static 'images/drycleaning.jpeg'%}" alt="" />
+        </span>
+        <a href="{% url 'dry_cleaning' %}">
+            <h2>DRY CLEANING</h2>
+            <div class="content">
+                <p>Removes stains, soils and any other substances from fabrics.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style4">
+        <span class="image">
+            <img src="{% static 'images/shoelaundry.jpeg'%}" alt="" />
+        </span>
+        <a href="{% url 'shoe_laundry' %}">
+            <h2>SHOE LAUNDRY</h2>
+            <div class="content">
+                <p>applies deep cleaning systems for all types of shoes. </p>
+            </div>
+        </a>
+    </article>
+    <article class="style5">
+        <span class="image">
+            <img src="{% static 'images/saree.jpeg'%}" alt="" />
+        </span>
+        <a href="{% url 'saree_rooling' %}">
+            <h2>SAREE ROLLING</h2>
+            <div class="content">
+                <p>Take care of the natural beauty of your saree.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style6">
+        <span class="image">
+            <img src="{% static 'images/stain.jpeg'%}" alt="" />
+        </span>
+        <a href="{% url 'strain_removal' %}">
+            <h2>STAIN REMOVAL</h2>
+            <div class="content">
+                <p>.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style3">
+        <span class="image">
+            <img src="{% static 'images/ironing.jpeg'%}" alt="" />
+        </span>
+        <a href="{% url 'steam_ironing' %}">
+            <h2>STEAM IRONING</h2>
+            <div class="content">
+                <p>.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style1">
+        <span class="image">
+            <img src="{% static 'images/carpet.jpeg'%}" alt="" />
+        </span>
+        <a href="{% url 'carpet' %}">
+            <h2>CARPET & CURTAINS CLEANING</h2>
+            <div class="content">
+                <p>.</p>
+            </div>
+        </a>
+    </article>
+    <article class="style2">
+        <span class="image">
+            <img src="{% static 'images/toys.jpg'%}" alt="" />
+        </span>
+        <a href="{% url 'toys_cleaning' %}">
+            <h2>SOFT TOYS CLEANING</h2>
+            <div class="content">
+                <p>.</p>
+            </div>
+        </a>
+    </article>
+</section>
